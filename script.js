@@ -26,14 +26,46 @@
 
 // checkerBoard();
 
+// let body = document.body;
+
+// function randomColor() {
+
+// for (var i = 0; i < 63; i++) {
+//     let randomOne = Math.ceil(Math.random() * 255)
+//     let randomTwo = Math.ceil(Math.random() * 255)
+//     let randomThree = Math.ceil(Math.random() * 255)
+//     let square = document.createElement('div') 
+//     square.style.width = "11.1%";
+//     square.style.float = "left";
+//     square.style.paddingBottom = "11.1%";
+//     document.body.append(square);
+//     square.style.background = `rgb(${randomOne},${randomTwo},${randomThree})`;
+//     // console.log(randomColorOne);
+
+
+// // if (i % 2 !== 0) {
+// //     square.style.backgroundColor = rgbA;
+// // } else {
+// //     square.style.backgroundColor = rgbA;
+// //     }
+//  }
+// }
+
+// randomColor();
+
 let body = document.body;
 
-function randomColor() {
+function gradient() {
+
+    let randomOne = Math.ceil(Math.random() * 100);
+    let randomTwo = Math.ceil(Math.random() * 100);
+    let randomThree = Math.ceil(Math.random() * 100);
+    let randomFour = Math.ceil(Math.random() * (255-150) + 150);
+    let randomFive = Math.ceil(Math.random() *(255-150) + 150);
+    let randomSix = Math.ceil(Math.random() * (255-150) + 150);
 
 for (var i = 0; i < 63; i++) {
-    let randomOne = Math.ceil(Math.random() * 255)
-    let randomTwo = Math.ceil(Math.random() * 255)
-    let randomThree = Math.ceil(Math.random() * 255)
+
     let square = document.createElement('div') 
     square.style.width = "11.1%";
     square.style.float = "left";
@@ -42,13 +74,20 @@ for (var i = 0; i < 63; i++) {
     square.style.background = `rgb(${randomOne},${randomTwo},${randomThree})`;
     // console.log(randomColorOne);
 
+if (i % 2 !== 0) {
+    square.style.background = `rgb(${randomOne},${randomTwo},${randomThree})`;
+} else {
+    square.style.background = `rgb(${randomFour},${randomFive},${randomSix})`;
+    }
 
-// if (i % 2 !== 0) {
-//     square.style.backgroundColor = rgbA;
-// } else {
-//     square.style.backgroundColor = rgbA;
-//     }
- }
+    randomOne += 2;
+    randomTwo += 2;
+    randomThree += 2;
+    randomFour -= 2;
+    randomFive -= 2;
+    randomSix -= 2;
+
+  }
 }
 
-randomColor();
+gradient()
